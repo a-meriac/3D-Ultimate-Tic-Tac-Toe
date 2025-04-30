@@ -1,44 +1,61 @@
-# 3D Ultimate Tic Tac Toe
+# 🎮 3D Ultimate Tic Tac Toe
 
-Welcome to **3D Ultimate Tic Tac Toe** — a full-terminal Python game that combines classic Tic Tac Toe with the depth of Ultimate Tic Tac Toe... in **three dimensions**.
+Welcome to **3D Ultimate Tic Tac Toe** — a full-terminal Python game that combines classic Tic Tac Toe with the layered strategy of Ultimate Tic Tac Toe… in **three dimensions**.
 
+---
 
-## What is this?
+## 📖 What is this?
 
-This is a Python implementation of a custom game based on:
+A Python implementation that merges:
 
-- ✅ **Tic Tac Toe**  
-- ✅ **Ultimate Tic Tac Toe**  
-- ✅ **3D Tic Tac Toe**
+| ✔ | Concept                 |
+|---|-------------------------|
+| ✅ | Regular Tic Tac Toe     |
+| ✅ | Ultimate Tic Tac Toe    |
+| ✅ | 3-D Tic Tac Toe (3×3×3) |
 
-## How to Play:
+You play on a **3×3×3 grid of 3×3×3 mini-boards** (729 cells total). Win mini-cubes, then align three won cubes to claim total victory.
 
-1. The game starts in the **center cube**.
-2. You enter your move as a 3-digit coordinate, like `120`:
-   - `sx` (small x): 1  
-   - `sy` (small y): 2  
-   - `sz` (small z): 0  
-3. Your move determines which **big cube** the next player must play in.
-   - Example: if you place in `(1,2,0)`, the opponent must play in big cube `(1,2,0)`.
-4. Win a **3×3×3 cube** by lining up 3 marks (X or O).
-5. Win the game by winning 3 cubes in a row — in **any direction** — across the 3D grid!
+---
+
+## 🕹️ How to Play
+
+1. **Game start:** first move is always in the **center cube** `(1,1,1)`.
+2. **Input format:** type a **3-digit** coordinate such as `120`
+   - `sx` (small x)   `1`
+   - `sy` (small y)   `2`
+   - `sz` (small z)   `0`
+3. That move forces your opponent to play in big cube `(1,2,0)`.
+4. **Win a mini-cube** by lining up 3 marks (rows, columns, pillars, diagonals).
+5. **Win the game** by winning 3 mini-cubes in a row in the 3-D meta-grid.
+
+---
 
 ## 💾 Features
 
-- 🧑‍🤝‍🧑 Named players with personalized turns
-- ♻️ Undo your last move with `/undo`
-- 💾 Save and load games by name
-- 🗂️ Multiple named saves supported
-- ❌ `/delete <savename>` to remove a saved game
-- 🆕 `/new` to start fresh
-- 🧠 `/help` for in-game command list
+| Command / Feature            | Description                                                     |
+|------------------------------|-----------------------------------------------------------------|
+| **Named players**            | Game greets each player by name                                 |
+| `/undo`                      | Undo the last move                                              |
+| `/print`                     | Show the full 9 × 9 × 9 board                                   |
+| `/saves`                     | List all saved games with stats                                 |
+| `/delete &lt;name&gt;`       | Delete a saved game                                             |
+| `/new`                       | Start a fresh game                                              |
+| **Multiple saves**           | Create any number of named save files                           |
+| **Auto-save**                | The game saves **once per turn**                                |
+| **Meta-win detection**       | Detects 3-in-a-row of won cubes for the overall win             |
+| `/help`                      | In-game command reference                                       |
 
-## Requirements:
+---
 
-- Python 3.6+
-- Runs entirely in the terminal — no external libraries required
+## 🔧 Requirements
 
-## How to run the Game
+- **Python 3.6+**  
+- No external libraries — 100 % standard library
+
+---
+
+## 🚀 Running the Game
 
 ```bash
-python3 main.py
+python game.py
